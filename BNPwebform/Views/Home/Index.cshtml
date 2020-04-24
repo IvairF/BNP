@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "HOME >> Aplicativo BNP >> Movimentos Manuais";
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="card">
+        <div class="card-body">
+            @using (Html.BeginForm("Edit", ", FormMethod.Post, new { id = "convenioForm" }))
+            {
+
+                @Html.HiddenFor(x => x.Id, new { @class = "", id = "" })
+                <div class="form-group">
+                    <label for="Nome">Nome do Convênio</label>
+                    @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", id = "Nome", @maxlength = 70, placeholder = "Nome do Convênio", required = "" })
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="NomeAbreviado">Nome Abreviado do Convênio</label>
+                    @Html.TextBoxFor(x => x.NomeAbreviado, new { @class = "form-control", id = "NomeAbreviado", @maxlength = 20, placeholder = "Nome Abreviado", required = "" })
+
+
+                </div>
+                <div class="form-group">
+                    <label for="RegistroANS">Registro ANS</label>
+                    @Html.TextBoxFor(x => x.RegistroANS, new { @class = "form-control", id = "RegistroANS", placeholder = "" })
+                </div>
+                <div class="form-group">
+                    <label for="CodCorporativo">Código Corporativo do Convênio</label>
+                    @Html.TextBoxFor(x => x.CodCorporativo, new { @class = "form-control", id = "CodCorporativo", placeholder = "" })
+                </div>
+                <div class="form-group">
+                    <label for="TipoConvenio">Tipo de Convênio</label>
+                    @Html.DropDownList("TipoConvenio", ViewBag.TiposConvenio as List<SelectListItem>, new { @class = " form-control ", id = "TipoConvenio" })
+                </div>
+                <div class="col-xs-10">
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(x => x.isElegibilidade, new { @class = "form-check-input", id = "Elegivel" })
+                            Elegível
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            @if (EhEdicao)
+                            {
+                                @Html.CheckBoxFor(x => x.isAtivo, new { @class = "form-check-input", id = "Ativo" })
+                            }
+                            else
+                            {
+                                @Html.CheckBoxFor(x => x.isAtivo, new { @class = "form-check-input", id = "Ativo", @checked = "checked", disabled = "disabled" })
+                            }
+                            Ativo
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    @Html.Action("GridConvenios")
+                </div>
+
+            </div>
+        </div>

@@ -1,0 +1,32 @@
+﻿@model List<Amil.AppHospitais.DTO.Convenio>
+
+@if (Model != null)
+{
+    <table class="table table-striped table-hover" id="listaGrid">
+        <thead>
+            <tr>
+                <th>Mês</th>
+                <th>Ano</th>
+                <th>Codigo de Produto</th>
+                <th>Descrição do Produto</th>
+                <th>Nr Lançamento</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr data-idConvenio="@item.Id">
+                <td>@item.mes</td>
+                <td>@item.ano</td>
+                <td>@item.codProduto</td>
+                <td>@item.descricaoProduto</td>
+                <td>@item.lancamento</td>
+                <td>@item.descricao</td>
+                <td>@item.valor</td>                
+            </tr>
+            }
+        </tbody>
+    </table>
+}

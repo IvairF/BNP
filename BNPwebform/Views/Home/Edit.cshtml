@@ -1,0 +1,74 @@
+﻿@model Bnp.Movimentacoes.DTO
+
+@{
+    ViewBag.Title = "HOME >> Aplicativo BNP >> Movimentos Manuais";
+   
+}
+    <div class="card">
+        <div class="card-body">
+            @using (Html.BeginForm("Edit", "Convenio", FormMethod.Post, new { id = "ListaForm" }))
+            {
+
+                <div class="col-xs-10">
+
+                    @Html.HiddenFor(x => x.Id, new { @class = "", id = "" })
+                    <div class="form-group">
+                        <label for="Mes">Mês</label>
+                        @Html.TextBoxFor(x => x.Mes, new { @class = "form-control", id = "Mes", @maxlength = 2, placeholder = "Produto Mes", required = "" })
+
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Ano">Ano</label>
+                        @Html.TextBoxFor(x => x.Ano, new { @class = "form-control", id = "Ano", @maxlength = 4, placeholder = "Produto Ano", required = "" })
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-xs-10">
+
+                    <div class="form-group">
+                        <label for="Produto">Produto</label>
+                        @Html.DropDownList("Produto", ViewBag.Produto as List<SelectListItem>, new { @class = " form-control ", id = "Produto" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Produto">Cosif</label>
+                        @Html.DropDownList("cosif", ViewBag.Cosif as List<SelectListItem>, new { @class = " form-control ", id = "Cosif" })
+                    </div>
+
+                </div>
+
+                <div class="col-xs-10">
+
+                    <div class="form-group">
+                        <label for="Valor">Valor</label>
+                        @Html.TextBoxFor(x => x.Valor, new { @class = "form-control", id = "Valor", placeholder = "Produto Valor", required = "" })
+
+                    </div>
+                </div>
+
+                <div class="col-xs-10">
+
+                    <div class="form-group">
+                        <label for="Descricao">Descrição</label>
+                        @Html.TextBoxFor(x => x.Descricao, new { @class = "form-control", id = "Valor", placeholder = "Produto Descrição", required = "", @style = "width:250px; height: 200px;" })
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-primary" id="btnLimpar" title="Limpar" onclick="javascript: Limpar();">Limpar</button>
+                        <button type="button" class="btn btn-outline btn-primary" id="btnNovo" title="Novo" onclick="javascript: Novo();">Novo</button>
+                        <button type="button" class="btn btn-outline btn-primary" id="btnIncluir" title="Incluir" onclick="javascript: Incluir();">Incluir</button>                       
+                    </div>
+                </div>
+            }
+        </div>
+            </div>

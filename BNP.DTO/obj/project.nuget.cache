@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/GkNyofVNXlxkHfQsb9gayS9gI6aU/o9JlUL2EeregFE/8nX/C3Dx5Audw0gp29Vkboi4jYLLl9bNeCFIgJdTQ==",
+  "success": true,
+  "projectFilePath": "C:\\ivair\\BNP\\BNPwebform\\BNP.DTO\\BNP.DTO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ivair França\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Ivair França\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
